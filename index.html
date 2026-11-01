@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BLUEVERSE — Play. Create. Share.</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">B</span><span>BLUE<span class="brand-light">VERSE</span></span></a>
+  <div class="search-wrap"><span>⌕</span><input id="search" placeholder="Search almost 1,000 worlds..." autocomplete="off"></div>
+  <nav><button class="nav-link active" data-view="discover">Discover</button><button class="nav-link" data-view="studio">Studio</button></nav>
+  <div class="user-area" id="userArea"><button class="outline-btn" id="openAuth">Log in</button><button class="primary-btn small" id="openSignup">Sign up</button></div>
+</header>
+<main>
+<section id="discoverView" class="view">
+  <section class="hero">
+    <div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span> YOUR NEXT WORLD IS WAITING</div>
+      <h1>Play more.<br><span>Create anything.</span></h1>
+      <p>Explore new worlds, meet your next favorite game, or build something the whole community can play.</p>
+      <div class="hero-actions"><button class="primary-btn" id="heroPlay">▶ &nbsp; Explore games</button><button class="ghost-btn" id="heroCreate">＋ &nbsp; Create a game</button></div>
+      <div class="hero-stats"><div><b>999</b><small>WORLD IDEAS</small></div><div><b>∞</b><small>YOUR CREATIVITY</small></div><div><b>24/7</b><small>PLAY TIME</small></div></div>
+    </div>
+    <div class="hero-art"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="platform"></div><div class="avatar avatar-a"><i></i><b></b></div><div class="avatar avatar-b"><i></i><b></b></div><div class="floating-card"><span class="tiny-icon">✦</span><div><b>New worlds</b><small>Ready to explore</small></div><span class="online-pill">LIVE</span></div><div class="hero-glow"></div></div>
+  </section>
+  <section class="section-head"><div><div class="eyebrow">PICK YOUR ADVENTURE</div><h2>Featured worlds</h2></div><button class="text-btn" id="showAll">See all 999 ↗</button></section>
+  <div class="category-row" id="categories"><button class="chip selected" data-cat="All">All games</button><button class="chip" data-cat="Adventure">Adventure</button><button class="chip" data-cat="Action">Action</button><button class="chip" data-cat="Racing">Racing</button><button class="chip" data-cat="Puzzle">Puzzle</button><button class="chip" data-cat="Chill">Chill</button></div>
+  <div class="game-grid" id="gameGrid"></div>
+  <div class="load-row"><span id="countLabel">Showing featured worlds</span><button class="outline-btn" id="loadMore">Load more worlds</button></div>
+  <section class="creator-banner"><div><div class="eyebrow">MADE BY YOU</div><h2>Your idea. Your game. Your world.</h2><p>Open the Studio, use the visual tools or write code, then publish your creation.</p><button class="primary-btn" id="bannerCreate">Open Creator Studio →</button></div><div class="banner-cubes"><span>◆</span><span>⬢</span><span>✦</span></div></section>
+</section>
+<section id="studioView" class="view hidden">
+  <div class="studio-heading"><div><div class="eyebrow">CREATOR WORKSPACE</div><h1>Creator <span>Studio</span></h1><p>Build a world, customize it, and share your idea.</p></div><button class="primary-btn" id="publishTop">↑ Publish game</button></div>
+  <div class="studio-layout">
+    <aside class="tool-panel"><h3>BUILD TOOLS</h3><button class="tool active" data-tool="select">↖ <span>Select</span></button><button class="tool" data-tool="terrain">▦ <span>Terrain</span></button><button class="tool" data-tool="avatar">♙ <span>Characters</span></button><button class="tool" data-tool="object">⬡ <span>Objects</span></button><button class="tool" data-tool="light">☼ <span>Lighting</span></button><div class="panel-divider"></div><h3>PROJECT</h3><button class="tool" id="newProject">＋ <span>New project</span></button><button class="tool" id="openCode">⌘ <span>Code editor</span></button><div class="tip-box">✦ <b>Creator tip</b><small>Start with a simple idea. You can add more features later.</small></div></aside>
+    <div class="editor-main"><div class="editor-toolbar"><span><i class="save-dot"></i> <b id="projectTitle">Untitled world</b></span><span class="toolbar-right"><small>PREVIEW MODE</small><button class="mini-btn" id="resetScene">↺ Reset</button></span></div><div class="scene" id="scene"><div class="scene-sky"></div><div class="scene-sun"></div><div class="scene-cloud cloud1"></div><div class="scene-cloud cloud2"></div><div class="scene-hill hill1"></div><div class="scene-hill hill2"></div><div class="scene-ground"></div><div class="scene-platform"></div><div class="scene-player"><div class="player-head"></div><div class="player-body"></div><div class="player-leg l"></div><div class="player-leg r"></div></div><div class="scene-label">YOUR WORLD PREVIEW</div></div><div class="scene-footer"><span>● Scene ready</span><span id="toolStatus">Select a tool to start building</span></div>
+      <div class="properties"><div><b>World settings</b><small>Customize your experience</small></div><label>World name<input id="worldName" value="Untitled world" maxlength="36"></label><label>Theme<select id="worldTheme"><option value="sky">Sky island</option><option value="sunset">Sunset valley</option><option value="neon">Neon city</option><option value="forest">Mystic forest</option></select></label><label>Game type<select id="worldType"><option>Adventure</option><option>Obby</option><option>Racing</option><option>Hangout</option><option>Battle arena</option><option>Puzzle</option></select></label></div>
+    </div>
+    <aside class="right-panel"><h3>ASSETS</h3><div class="asset-grid"><button class="asset" data-asset="Tree"><span>🌳</span>Tree</button><button class="asset" data-asset="Rock"><span>🪨</span>Rock</button><button class="asset" data-asset="Portal"><span>🌀</span>Portal</button><button class="asset" data-asset="Gem"><span>💎</span>Gem</button><button class="asset" data-asset="Cloud"><span>☁️</span>Cloud</button><button class="asset" data-asset="Star"><span>⭐</span>Star</button></div><div class="panel-divider"></div><h3>OBJECTS IN WORLD</h3><div id="objectList" class="object-list"><small>No extra objects yet. Add one above.</small></div><div class="tip-box">💡 <b>Build your way</b><small>Use the tools, or open the code editor to write JavaScript.</small></div></aside>
+  </div>
+</section>
+<section id="playView" class="view hidden"><div class="play-top"><button class="text-btn" id="backDiscover">← Back to worlds</button><span class="playing-tag">NOW PLAYING</span></div><div class="play-layout"><div class="game-stage" id="gameStage"><div class="game-hud"><span id="playTitle">Crystal Quest</span><span id="score">Gems: 0</span></div><div class="play-sky"></div><div class="play-ground"></div><div class="game-character" id="gameCharacter">🧑‍🚀</div><div class="gem gem1">💎</div><div class="gem gem2">💎</div><div class="gem gem3">💎</div><div class="game-instructions" id="gameInstructions">Use ← → or A / D to move. Collect the crystals!</div><div class="game-controls"><button id="leftBtn">←</button><button id="jumpBtn">↑</button><button id="rightBtn">→</button></div></div><aside class="play-sidebar"><h3>GAME CHAT</h3><div class="chat-notice">Demo chat: messages stay on this device. Be kind and never share personal information.</div><div id="chatMessages" class="chat-messages"><div class="chat-line"><b>GuideBot</b><span>Welcome! Have fun exploring.</span></div></div><form id="chatForm" class="chat-form"><input id="chatInput" maxlength="120" placeholder="Say something kind..." autocomplete="off"><button>➤</button></form><div class="chat-note">Community safety matters. Keep it friendly.</div></aside></div></section>
+</main>
+<footer><span>BLUEVERSE</span><span>Play • Create • Share</span><span>Prototype experience</span></footer>
+</div>
+<div class="modal-backdrop hidden" id="authModal"><div class="modal"><button class="close" data-close="authModal">×</button><div class="eyebrow">WELCOME TO BLUEVERSE</div><h2 id="authTitle">Create your account</h2><p id="authDesc">Join the community and start creating.</p><form id="authForm"><label id="emailLabel">Email<input type="email" id="email" required placeholder="you@example.com"></label><label id="usernameLabel">Username<input id="username" maxlength="18" placeholder="YourPlayerName" required></label><label>Password<input type="password" id="password" minlength="6" required placeholder="At least 6 characters"></label><button class="primary-btn full" id="authSubmit">Create account</button></form><div class="modal-message" id="authMessage"></div><div class="auth-switch" id="authSwitch">Already have an account? <button id="switchLogin">Log in</button></div><button class="forgot-link" id="forgotBtn">Forgot password?</button><small class="demo-warning">Demo only: account details stay in this browser. No real email or online account is created.</small></div></div>
+<div class="modal-backdrop hidden" id="publishModal"><div class="modal"><button class="close" data-close="publishModal">×</button><div class="eyebrow">SHARE YOUR CREATION</div><h2>Publish your world</h2><p>Give your game a name so players can find it.</p><form id="publishForm"><label>Game name<input id="publishName" maxlength="36" required placeholder="My awesome game"></label><label>Description<input id="publishDescription" maxlength="100" placeholder="What is your game about?"></label><button class="primary-btn full">Publish to this browser</button></form><div id="publishMessage" class="modal-message"></div><small class="demo-warning">Publishing is local in this prototype. To make games public to everyone, a secure online server is needed.</small></div></div>
+<div class="modal-backdrop hidden" id="codeModal"><div class="modal code-modal"><button class="close" data-close="codeModal">×</button><div class="eyebrow">ADVANCED CREATION</div><h2>Code editor</h2><p>Write JavaScript for your own game logic.</p><textarea id="codeEditor" spellcheck="false">// Welcome to Blueverse Studio!
+// Try changing the message below.
+const greeting = "Hello, world!";
+console.log(greeting);</textarea><button class="primary-btn full" id="saveCode">Save code</button><div class="modal-message" id="codeMessage"></div><small class="demo-warning">Code is saved as project text; this demo does not execute custom code.</small></div></div>
+<script src="app.js"></script>
+</body></html>
